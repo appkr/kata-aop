@@ -8,5 +8,10 @@
             "email": "juwonkim@me.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "KataAop\\": "src/"
+        }
+    },
     "require": {}
 }
