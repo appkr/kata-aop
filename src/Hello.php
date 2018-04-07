@@ -2,10 +2,21 @@
 
 namespace KataAop;
 
+use Psr\Http\Message\ResponseInterface;
+
 class Hello
 {
-    public function aop()
+    private $response;
+
+    public function __construct(ResponseInterface $response)
     {
-        return 'Hello Aop';
+        $this->response = $response;
+    }
+
+    public function __invoke(): ResponseInterface
+    {
+        $response = $this->response->withHeader('Content-Type', 'application/json');
+        $response->getBody()->write(json_encode(['message' => 'Hello Aop']));
+        return $response;
     }
 }
