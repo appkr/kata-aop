@@ -1,0 +1,12 @@
+{
+    "name": "appkr/kata-aop",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "appkr",
+            "email": "juwonkim@me.com"
+        }
+    ],
+    "require": {}
+}
